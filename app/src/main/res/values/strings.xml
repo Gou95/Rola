@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Rola Partner</string>
+    <string name="help">Assist</string>
+    <string name="what_s_your">What’s your</string>
+    <string name="phone_number">phone number?</string>
+    <string name="let_s_check_if_you_are_already_registered_nwith_us">Let’s check if you are already registered\nwith us.</string>
+    <string name="by_continuing_i_agree_to_rolaride_s">By continuing, I agree to Rolaride’s</string>
+    <string name="terms_amp_conditions"><![CDATA[terms & conditions]]></string>
+    <string name="send">Send</string>
+    <string name="enter_your">Enter your</string>
+    <string name="code">Code</string>
+    <string name="we_will_auto_verify_the_one_time_code_sent_nto_your_number">We will auto verify the one-time code sent\nto your number.</string>
+    <string name="didn_t_receive_the_code">Didn’t receive the code?</string>
+    <string name="resend">Resend</string>
+    <string name="verify">Verify</string>
+    <string name="try_again">try again</string>
+    <string name="wrong_otp">wrong OTP</string>
+    <string name="server_not_response">server not response</string>
+    <string name="otp_send_successfully">OTP Send Successfully</string>
+    <string name="if_the_vehicle_owner_name_on_the_vehicle_documents_is_different_from_mine_then_i_hereby_confirm_that_i_have_the_vehicle_owner_s_consent_to_drive_this_vehicle_on_sat_platform_this_declaration_can_be_treated_as_a_no_objection_certificate_and_releases_sat_from_any_legal_obligations_and_consequences">If the vehicle owner name on the vehicle documents is different from mine, then I hereby confirm that I have the vehicle owner’s consent to drive this vehicle on SAT platform. This declaration can be treated as a No-Objection Certificate and releases SAT from any legal obligations and consequences.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="residential_address">Residential Address -</string>
+
+
+</resources>

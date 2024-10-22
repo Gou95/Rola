@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.AddDriversActivity"
+    android:background="@color/screen_white_2"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        >
+
+        <ImageButton
+            android:id="@+id/imgBtn_arrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/tran"
+            android:src="@drawable/ic_back_2" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:backgroundTint="@color/light_black_3"
+            app:cardCornerRadius="25dp"
+            android:layout_alignParentEnd="true"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Assist"
+                android:textColor="@color/white2"
+                android:textSize="11sp"
+                android:fontFamily="@font/helvetica_bold"
+                android:gravity="center"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="Add"
+            android:textColor="@color/light_black_3"
+            android:fontFamily="@font/helvetica_bold"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="Driver profile"
+            android:textColor="@color/green"
+            android:fontFamily="@font/helvetica_bold"
+            android:layout_marginStart="10dp"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:hint="Name"
+        android:textColorHint="@color/black_50_2"
+        android:inputType="text"
+        android:singleLine="true"
+        android:background="@null"
+        android:layout_marginStart="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/green"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"/>
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="Enter name"
+        android:textColor="@color/red"
+        android:layout_marginHorizontal="10dp"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/edt_phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="Phone number"
+        android:textColorHint="@color/black_50_2"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:singleLine="true"
+        android:background="@null"
+        android:maxLength="10"
+        android:layout_marginStart="10dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/green"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"/>
+
+    <TextView
+        android:id="@+id/txt_phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="Enter phone number"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        android:layout_marginHorizontal="10dp"/>
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="E-mail"
+        android:textColorHint="@color/black_50_2"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:background="@null"
+        android:layout_marginStart="10dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/green"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"/>
+
+    <TextView
+        android:id="@+id/txt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="Enter email"
+        android:layout_marginHorizontal="10dp"
+        android:textColor="@color/red"
+        android:visibility="gone"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp">
+
+
+        <EditText
+            android:id="@+id/edt_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Profile photo"
+            android:textColorHint="@color/black_50_2"
+            android:inputType="text"
+            android:singleLine="true"
+            android:background="@null"/>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:cardBackgroundColor="@color/green"
+            app:cardCornerRadius="12dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            >
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/tran"
+                android:src="@drawable/write" />
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </RelativeLayout>
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/green"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"/>
+
+
+    <TextView
+        android:id="@+id/txt_profilePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="Enter profile image"
+        android:layout_marginHorizontal="10dp"
+        android:textColor="@color/red"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp"
+        >
+        <EditText
+            android:id="@+id/edt_drivingDL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Driving license(front)"
+            android:textColorHint="@color/black_50_2"
+            android:inputType="text"
+            android:singleLine="true"
+            android:background="@null"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="upload"
+            android:textSize="12sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/green"
+            android:fontFamily="@font/roboto_bold"/>
+
+
+
+    </RelativeLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/green"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"/>
+
+    <TextView
+        android:id="@+id/txt_drivingDl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="enter driving license front image"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        android:layout_marginHorizontal="10dp"/>
+
+</LinearLayout>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+       android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/green"
+        android:text="Save"
+        app:cornerRadius="10dp"
+        android:fontFamily="@font/helvetica_bold"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="10dp"
+        />
+
+</RelativeLayout>

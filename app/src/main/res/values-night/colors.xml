@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white2">#000000</color>
+    <color name="black2">#ffffff</color>
+    <color name="screen_white_2">#0F0C0C</color>
+    <color name="text_black2">#CCF5F5F5</color>
+    <color name="text_sub_black2">#818891</color>
+    <color name="text_white2">#000000</color>
+    <color name="black_50_2">#788290</color>
+    <color name="card_color_light_green2">#1F1F29</color>
+    <color name="like_blue2">#ffffff</color>
+    <color name="green2">#1F1F29</color>
+
+</resources>
+

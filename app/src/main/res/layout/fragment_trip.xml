@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_white_2"
+    tools:context=".Fragment.TripFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+<!--            <ImageButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:background="@color/tran"-->
+<!--                android:src="@drawable/ic_back_2" />-->
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_bold"
+                android:gravity="center"
+                android:text="Trip Management"
+                android:textColor="@color/light_bl"
+                android:textSize="24sp"/>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/helvetica_bold"
+            android:text="Personal Details"
+            android:textColor="@color/green"
+            android:textSize="16sp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name:"
+                    android:textColor="@color/txt_grey"
+                    android:fontFamily="@font/helvetica_bold"
+                    android:textSize="12sp"
+                   />
+
+
+                <EditText
+                    android:id="@+id/edt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_background"
+                    android:hint="Enter your name"
+                    android:paddingLeft="10dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black_3"
+                    android:textColorHint="@color/black_50_2"
+                    android:singleLine="true"/>
+
+
+                <TextView
+                    android:id="@+id/txt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Enter name"
+                    android:textColor="@color/red"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone number:"
+                    android:textColor="@color/txt_grey"
+                    android:fontFamily="@font/helvetica_bold"
+                    android:textSize="12sp"
+                   />
+
+
+                <EditText
+                    android:id="@+id/edt_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_background"
+                    android:hint="+91....."
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black_3"
+                    android:textColorHint="@color/light_black_3"
+                    android:maxLength="10"
+                    android:paddingLeft="10dp" />
+
+
+                <TextView
+                    android:id="@+id/txt_phoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter phoneNumber"
+                    android:textSize="12sp"
+                    android:textColor="@color/red"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Driver name:"
+            android:textColor="@color/black_50_2"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/edt_driverName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_background"
+            android:hint="Enter driver name"
+            android:paddingLeft="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/light_black_3"
+            android:textColorHint="@color/black_50_2"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/txt_driverName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="Enter driver name"
+            android:textColor="@color/red"
+            android:visibility="gone"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comment:"
+                android:textColor="@color/black_50_2"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edit_background"
+
+                >
+                <EditText
+                    android:id="@+id/edt_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="You can leave your opinion"
+                    android:paddingLeft="10dp"
+                    android:inputType="text"
+                    android:textSize="12sp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/light_black_3"
+                    android:textColorHint="@color/light_black_3"/>
+
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="Enter your comment"
+                android:textColor="@color/red"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/helvetica_bold"
+            android:text="Ride Details"
+            android:textColor="@color/green"
+            android:textSize="16sp"
+             />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pick up location:"
+                    android:textColor="@color/txt_grey"
+                    android:textSize="12sp"
+                  android:fontFamily="@font/helvetica_bold" />
+
+
+                <EditText
+                    android:id="@+id/edt_pickUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:singleLine="true"
+                    android:hint="Pick up location"
+                    android:textColor="@color/light_black_3"
+                    android:textColorHint="@color/light_black_3"
+                    android:background="@drawable/edit_background"
+                    android:paddingLeft="10dp"
+                    android:textSize="12sp"/>
+
+
+                <TextView
+                    android:id="@+id/txt_pickUpLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Enter pickup location"
+                    android:textColor="@color/red"
+                    android:visibility="gone"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Drop up location:"
+                    android:textColor="@color/txt_grey"
+                    android:fontFamily="@font/helvetica_bold"
+                    android:textSize="12sp"/>
+
+
+                <EditText
+                    android:id="@+id/edt_dropUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_background"
+                    android:hint="Drop up location"
+                    android:textColor="@color/light_black_3"
+                    android:textColorHint="@color/light_black_3"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/txt_dropUpLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Enter dropup location"
+                    android:textColor="@color/red"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Vehicle type:"
+            android:textColor="@color/txt_grey"
+            android:fontFamily="@font/helvetica_bold"
+            android:textSize="12sp"
+          />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:background="@drawable/edit_background"
+            android:hint="Enter your name"
+            android:paddingLeft="10dp">
+
+
+            <Spinner
+                android:id="@+id/spn_vehicleType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txt_selectVehicleType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="Select vehicle type"
+            android:textColor="@color/red"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Booking type:"
+            android:textColor="@color/txt_grey"
+            android:fontFamily="@font/helvetica_bold"
+            android:textSize="12sp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_background"
+            android:hint="Enter your name"
+            android:paddingLeft="10dp">
+
+
+            <Spinner
+                android:id="@+id/spn_bookingType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txt_selectBookingType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="Select booking type"
+            android:textColor="@color/red"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto assign driver "
+                android:textColor="@color/txt_grey"
+                android:fontFamily="@font/helvetica_bold"
+                android:textSize="12sp"
+                />
+
+            <Switch
+                android:id="@+id/switch_assignDriver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@color/tran"
+                android:thumbTint="@color/white"
+                android:trackTint="@color/green" />
+
+
+            <TextView
+                android:id="@+id/txt_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="Locate on map"
+                android:textColor="#244DDB"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="#707070"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:fontFamily="@font/helvetica_bold"
+                app:cornerRadius="10dp" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:fontFamily="@font/helvetica_bold"
+                app:cornerRadius="10dp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

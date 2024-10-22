@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_white_2"
+    tools:context=".Fragment.FinanceFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+
+            >
+
+<!--            <ImageButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:background="@color/tran"-->
+<!--                android:src="@drawable/ic_back_2" />-->
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_bold"
+                android:gravity="center"
+                android:text="Finance management"
+                android:textColor="@color/light_bl"
+                android:textSize="24sp"
+
+                />
+
+
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/light_green"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="11dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jotione"
+                    android:text="Monthly Overview"
+                    android:textColor="@color/light_black"
+                    android:textSize="20sp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@color/tran"
+                                android:src="@drawable/income" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="Total Balance"
+                                android:textColor="@color/light_black_2"
+                                android:fontFamily="@font/helvetica_regular"
+                                android:textSize="12sp" />
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pompiere"
+                            android:text="Rs 12000"
+                            android:textColor="@color/green"
+                            android:textSize="22sp"
+                            android:layout_marginTop="5dp"/>
+
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="45dp"
+                        android:layout_centerInParent="true"
+                        android:background="@color/black" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@color/tran"
+                                android:src="@drawable/expense" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="Total Expense"
+                                android:textColor="@color/light_black_2"
+                                android:fontFamily="@font/helvetica_regular"
+                                android:textSize="12sp" />
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/pompiere"
+                            android:text="Rs 4000"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/red"
+                            android:textSize="22sp" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    >
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:backgroundTint="@color/green"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="8dp"
+                        android:layout_margin="5dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="25sp"
+                            android:text="60%"
+                            android:textColor="@color/white2"
+                            android:textSize="14sp" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        app:cardElevation="8dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="15dp"
+                        android:layout_margin="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="10sp"
+                            android:fontFamily="@font/pompiere"
+                            android:text="Rs 8,000.00"
+                            android:textColor="@color/black2"
+                            android:textSize="16sp" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/tran"
+                        android:src="@drawable/check" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:fontFamily="@font/helvetica_regular"
+                        android:text="60% Profit Gain,Looks Good"
+                        android:textColor="@color/light_black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/tran"
+                        android:src="@drawable/coin" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@color/tran"
+                android:src="@drawable/calculates" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/helvetica_bold"
+                android:text="Revenue tracking"
+                android:textColor="@color/green"
+                android:textSize="17sp" />
+
+
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/light_green"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="7.5dp">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_daily"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                   android:layout_margin="5dp"
+                    android:background="@drawable/rounded_white"
+
+
+                  >
+
+                    <TextView
+                        android:id="@+id/txt_daily"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/helvetica_regular"
+                        android:gravity="center"
+                        android:text="Daily"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_weekly"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                   android:layout_margin="5dp"
+                    app:cardCornerRadius="20dp"
+                    android:background="@drawable/rounded_white"
+
+
+                    >
+                    <TextView
+                        android:id="@+id/txt_weekly"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Weekly"
+                        android:gravity="center"
+                        android:fontFamily="@font/helvetica_regular"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"/>
+
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_monthly"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                   android:layout_margin="5dp"
+                    app:cardCornerRadius="20dp"
+                    android:background="@drawable/rounded_white"
+
+
+                    >
+                    <TextView
+                        android:id="@+id/txt_monthly"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Monthly"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/helvetica_regular"
+                        android:textSize="14sp"/>
+
+
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_year"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                 android:layout_margin="5dp"
+                    app:cardCornerRadius="20dp"
+                    android:background="@drawable/rounded_white"
+
+                    >
+                    <TextView
+                        android:id="@+id/txt_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Year"
+                        android:gravity="center"
+                        android:fontFamily="@font/helvetica_regular"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"/>
+
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+
+            <View
+                android:id="@+id/radioIncome"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/view_circle"
+                android:backgroundTint="@android:color/holo_green_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income"
+                android:textSize="14sp"
+                android:textColor="@color/txt_b_2"
+                android:fontFamily="@font/helvetica_regular"/>
+
+
+            <View
+                android:id="@+id/radioExpenses"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/view_circle"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@android:color/holo_green_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expenses"
+                android:textSize="14sp"
+                android:textColor="@color/txt_b_2"
+                android:fontFamily="@font/helvetica_regular"/>
+
+
+            <!--            <RadioGroup-->
+<!--                android:id="@+id/radioGroup"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radioIncome"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                 />-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Income"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:textColor="@color/txt_b_2"-->
+<!--                    android:fontFamily="@font/helvetica_regular"/>-->
+
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radioExpenses"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:fontFamily="@font/helvetica_regular"-->
+<!--                    android:text="Expenses"-->
+
+<!--                    android:textColor="@color/txt_b_2"-->
+<!--                    android:textSize="14sp" />-->
+<!--            </RadioGroup>-->
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/tran"
+                    android:src="@drawable/calendar" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            />
+
+
+    </LinearLayout>
+
+</ScrollView>
