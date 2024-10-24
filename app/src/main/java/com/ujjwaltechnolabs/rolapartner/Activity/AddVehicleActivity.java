@@ -32,10 +32,13 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.bumptech.glide.Glide;
+import com.ujjwaltechnolabs.rolapartner.Activity.Camera.CameraActivity;
+import com.ujjwaltechnolabs.rolapartner.MVVM.Data.Body.VehicleRegisterBody;
 import com.ujjwaltechnolabs.rolapartner.MVVM.Data.Model.LoginModel;
 import com.ujjwaltechnolabs.rolapartner.MVVM.ViewModel.LoginViewModel;
 import com.ujjwaltechnolabs.rolapartner.Model.SelectFuelTypeResponse;
 import com.ujjwaltechnolabs.rolapartner.Model.SelectVehicleResponse;
+import com.ujjwaltechnolabs.rolapartner.Model.VehicleRegisterResponse;
 import com.ujjwaltechnolabs.rolapartner.R;
 import com.ujjwaltechnolabs.rolapartner.databinding.ActivityAddVehicleBinding;
 import com.yalantis.ucrop.UCrop;
@@ -185,11 +188,15 @@ public class AddVehicleActivity extends AppCompatActivity {
 
 
         binding.txtUpload.setOnClickListener(v -> {
-            checkCameraPermissionAndOpenCamera(REQUEST_CODE_CERTIFICATE);
+        //    checkCameraPermissionAndOpenCamera(REQUEST_CODE_CERTIFICATE);
+            Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
+            startActivity(intent);
         });
 
         binding.cardTrue.setOnClickListener(v -> {
-            checkCameraPermissionAndOpenCamera(REQUEST_CODE_INSURANCE);
+         //  checkCameraPermissionAndOpenCamera(REQUEST_CODE_INSURANCE);
+            Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
+            startActivity(intent);
         });
 
         binding.btnSave.setOnClickListener(view -> validateInputs());
@@ -235,7 +242,14 @@ public class AddVehicleActivity extends AppCompatActivity {
                 }
             }
         });
-
+ loginViewModel.vehicleRegisterObserver().observe(this, new Observer<VehicleRegisterResponse>() {
+     @Override
+     public void onChanged(VehicleRegisterResponse vehicleRegisterResponse) {
+         if (vehicleRegisterResponse !=null){
+             showToast("Successfully registered");
+         }
+     }
+ });
     }
 
     private void setupFuelSpinner(ArrayList<SelectFuelTypeResponse> fuelTypes) {
@@ -358,7 +372,77 @@ public class AddVehicleActivity extends AppCompatActivity {
         }
     }
 
-    //    private void startCrop(Uri sourceUri, Uri destinationUri) {
+    private void validateInputs() {
+        // Reset visibility of error messages before validation
+        binding.txtSelectVehicleName.setVisibility(View.GONE);
+        binding.txtSelectFuelType.setVisibility(View.GONE);
+        binding.txtCarName.setVisibility(View.GONE);
+        binding.txtVehicleNumber.setVisibility(View.GONE);
+        binding.txtInsurancePic.setVisibility(View.GONE);
+        binding.txtRc.setVisibility(View.GONE);
+
+        String vehicleName = binding.spinner.getSelectedItem() != null ? binding.spinner.getSelectedItem().toString() : "";
+        String fuelType = binding.spinnerFueltype.getSelectedItem() != null ? binding.spinnerFueltype.getSelectedItem().toString() : "";
+        String carName = binding.edtCarName.getText().toString().trim();
+        String vehicleNumber = binding.edtVehicleNumber.getText().toString().trim();
+        String insurance = binding.edtInsurance.getText().toString().trim();
+        String certificate = binding.edtCertificate.getText().toString().trim();
+
+        boolean isValid = true; // Flag to check overall validity
+
+        if (vehicleName.isEmpty()) {
+            isValid = false;
+        }
+        if (fuelType.isEmpty()) {
+            isValid = false;
+        }
+        if (carName.isEmpty()) {
+            binding.txtCarName.setVisibility(View.VISIBLE);
+            isValid = false;
+        }
+        if (vehicleNumber.isEmpty()) {
+            binding.txtVehicleNumber.setVisibility(View.VISIBLE);
+            isValid = false;
+        }
+        if (insurance.isEmpty()) {
+            binding.txtInsurancePic.setVisibility(View.VISIBLE);
+            isValid = false;
+        }
+        if (certificate.isEmpty()) {
+            binding.txtRc.setVisibility(View.VISIBLE);
+            isValid = false;
+        }
+
+        // If all inputs are valid, proceed with saving the data
+        if (isValid) {
+            VehicleRegisterBody body = new VehicleRegisterBody();
+            body.setMake(vehicleName);
+            body.setModel(fuelType);
+            body.setYear(insurance);
+            body.setColor(carName);
+            body.setSeat(certificate);
+            body.setLicensePlateNumber(vehicleNumber);
+            body.setVehicleTypeId("25");
+            body.setEnergyTypeId("3");
+            body.setDriverId("37");
+            loginViewModel.vehicleRegister(AddVehicleActivity.this,body);
+
+        }
+    }
+
+    private boolean isValidVehicleNumber(String vehicleNumber) {
+        String regex = "^[A-Z]{2}-\\d{2} [A-Z]{4}$"; // Regex for format XX-99 ABCD
+        return vehicleNumber.matches(regex);
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+}
+
+
+
+//    private void startCrop(Uri sourceUri, Uri destinationUri) {
 //        UCrop.of(sourceUri, destinationUri)
 //                .withAspectRatio(16, 9)  // Set your desired aspect ratio
 //                .withMaxResultSize(1000, 1000)  // Maximum resolution for cropped image
@@ -426,62 +510,3 @@ public class AddVehicleActivity extends AppCompatActivity {
 //            Toast.makeText(this, "Failed to insert image", Toast.LENGTH_SHORT).show();
 //        }
 //    }
-    private void validateInputs() {
-        // Reset visibility of error messages before validation
-        binding.txtSelectVehicleName.setVisibility(View.GONE);
-        binding.txtSelectFuelType.setVisibility(View.GONE);
-        binding.txtCarName.setVisibility(View.GONE);
-        binding.txtVehicleNumber.setVisibility(View.GONE);
-        binding.txtInsurancePic.setVisibility(View.GONE);
-        binding.txtRc.setVisibility(View.GONE);
-
-        String vehicleName = binding.spinner.getSelectedItem() != null ? binding.spinner.getSelectedItem().toString() : "";
-        String fuelType = binding.spinnerFueltype.getSelectedItem() != null ? binding.spinnerFueltype.getSelectedItem().toString() : "";
-        String carName = binding.edtCarName.getText().toString().trim();
-        String vehicleNumber = binding.edtVehicleNumber.getText().toString().trim();
-        String insurance = binding.edtInsurance.getText().toString().trim();
-        String certificate = binding.edtCertificate.getText().toString().trim();
-
-        boolean isValid = true; // Flag to check overall validity
-
-        if (vehicleName.isEmpty()) {
-
-        }
-        if (fuelType.isEmpty()) {
-
-        }
-        if (carName.isEmpty()) {
-            binding.txtCarName.setVisibility(View.VISIBLE);
-            isValid = false;
-        }
-        if (vehicleNumber.isEmpty()) {
-            binding.txtVehicleNumber.setVisibility(View.VISIBLE);
-            isValid = false;
-        } else if (!isValidVehicleNumber(vehicleNumber)) {
-            Toast.makeText(AddVehicleActivity.this, "Invalid vehicle number format. Expected format: MP-01 ABCD", Toast.LENGTH_SHORT).show();
-            isValid = false;
-        }
-        if (insurance.isEmpty()) {
-            binding.txtInsurancePic.setVisibility(View.VISIBLE);
-            isValid = false;
-        }
-        if (certificate.isEmpty()) {
-            binding.txtRc.setVisibility(View.VISIBLE);
-            isValid = false;
-        }
-
-        // If all inputs are valid, proceed with saving the data
-        if (isValid) {
-            showToast("Vehicle details saved successfully!");
-        }
-    }
-
-    private boolean isValidVehicleNumber(String vehicleNumber) {
-        String regex = "^[A-Z]{2}-\\d{2} [A-Z]{4}$"; // Regex for format XX-99 ABCD
-        return vehicleNumber.matches(regex);
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
-}

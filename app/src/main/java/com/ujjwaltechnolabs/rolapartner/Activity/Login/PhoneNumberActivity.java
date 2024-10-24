@@ -20,7 +20,7 @@ import com.ujjwaltechnolabs.rolapartner.R;
 import com.ujjwaltechnolabs.rolapartner.Utils.PhoneNumberValidator;
 import com.ujjwaltechnolabs.rolapartner.databinding.ActivityPhoneNumberBinding;
 
-public class PhoneNumberActivity extends AppCompatActivity {
+public class   PhoneNumberActivity extends AppCompatActivity {
     ActivityPhoneNumberBinding binding;
     String countryCode, phoneNumber, fullNumber, countryNameCode;
     LoginViewModel loginViewModel;

@@ -39,6 +39,7 @@ import android.widget.Toast;
 import com.google.common.util.concurrent.ListenableFuture;
 //import com.theartofdev.edmodo.cropper.CropImage;
 //import com.theartofdev.edmodo.cropper.CropImageView;
+import com.ujjwaltechnolabs.rolapartner.Activity.AddVehicleActivity;
 import com.ujjwaltechnolabs.rolapartner.Activity.Login.DocVerificationActivity;
 import com.ujjwaltechnolabs.rolapartner.MVVM.ViewModel.Login.DocumentModel;
 import com.ujjwaltechnolabs.rolapartner.MVVM.ViewModel.LoginViewModel;
@@ -46,6 +47,7 @@ import com.ujjwaltechnolabs.rolapartner.R;
 import com.ujjwaltechnolabs.rolapartner.SharedPref.SharedPrefManager;
 import com.ujjwaltechnolabs.rolapartner.Utils.ApplicationUtils;
 import com.ujjwaltechnolabs.rolapartner.databinding.ActivityCameraBinding;
+import com.yalantis.ucrop.UCrop;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -80,8 +82,8 @@ public class CameraActivity extends AppCompatActivity {
     Uri croppedImageUri;
     LoginViewModel viewModel;
     int driverId;
-    File document;
-    String documentType;
+    File document = null;
+    String documentType="null", addVehicle;
     ProgressDialog progressDialog;
 
     @Override
@@ -89,10 +91,12 @@ public class CameraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityCameraBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
         progressDialog = new ProgressDialog(CameraActivity.this);
         driverId = SharedPrefManager.getInstance(CameraActivity.this).getInt("id", 0);
-        documentType = getIntent().getStringExtra("document");
+//        documentType = getIntent().getStringExtra("document");
+//        addVehicle = getIntent().getStringExtra("addVehicle");
         Log.e("DocumentType", documentType);
         // Set the camera facing based on document type
         if (ApplicationUtils.PROFILE.equals(documentType)) {
@@ -146,7 +150,7 @@ public class CameraActivity extends AppCompatActivity {
                         finish();
                     }
                     if (Objects.equals(documentModel.getDocumentType(), ApplicationUtils.VEHICLE_INSURANCE)) {
-                        intent = new Intent(getApplicationContext(), DocVerificationActivity.class);
+                        intent = new Intent(getApplicationContext(), AddVehicleActivity.class);
                         intent.putExtra("document", documentModel.getDocumentType());
                         Log.e("documentType", documentModel.getDocumentType());
                         startActivity(intent);
@@ -266,6 +270,10 @@ public class CameraActivity extends AppCompatActivity {
 //        CropImage.activity(imageUri)
 //                .setGuidelines(CropImageView.Guidelines.ON)
 //                .start(this);
+        UCrop.of(imageUri, Uri.fromFile(new File(getCacheDir(), "tempImage.jpg")))
+                .withAspectRatio(16, 9)  // Set your desired aspect ratio
+                .withMaxResultSize(1000, 1000)  // Maximum resolution for cropped image
+                .start(this);
     }
 
     //for camera
@@ -320,6 +328,11 @@ public class CameraActivity extends AppCompatActivity {
 //            CropImage.activity(imageUri)
 //                    .setGuidelines(CropImageView.Guidelines.ON)
 //                    .start(this);
+
+            UCrop.of(imageUri, Uri.fromFile(new File(getCacheDir(), "tempImage.jpg")))
+                    .withAspectRatio(16, 9)  // Set your desired aspect ratio
+                    .withMaxResultSize(1000, 1000)  // Maximum resolution for cropped image
+                    .start(this);
         } else {
             Log.e("FileNotFound", "The file does not exist at the specified path.");
             // Handle the case where the file is not found
@@ -407,6 +420,23 @@ public class CameraActivity extends AppCompatActivity {
 //                // Handle the error
 //            }
 //        }
+
+        else if (requestCode == UCrop.REQUEST_CROP) {
+
+            Uri resultUri = UCrop.getOutput(data);
+            if (resultUri != null) {
+                croppedImageUri = resultUri;
+                binding.imagePreview.setImageURI(croppedImageUri);
+
+            }
+        }
+        else if (resultCode == UCrop.RESULT_ERROR) {
+            Throwable cropError = UCrop.getError(data);
+            if (cropError != null) {
+                cropError.printStackTrace();
+                Toast.makeText(this, "Image cropping failed", Toast.LENGTH_SHORT).show();
+            }
+        }
 
     }
 }

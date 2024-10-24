@@ -11,4 +11,5 @@ public class ApiUtils {
     public static final String REGISTER_API = "api/v1/drivers/{id}";
     public static final String GET_SELECT_VEHICLE = "/api/v1/vehicleTypes";
     public static final String GET_SELECT_FUELTYPE = "/api/v1/energyTypes";
+    public static final String VEHICLES_CREATE = "/api/v1/vehicles/create";
 }

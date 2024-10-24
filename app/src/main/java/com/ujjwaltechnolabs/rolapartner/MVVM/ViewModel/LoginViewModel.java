@@ -8,12 +8,14 @@ import androidx.lifecycle.ViewModel;
 
 import com.ujjwaltechnolabs.rolapartner.Interface.ApiInterface;
 import com.ujjwaltechnolabs.rolapartner.MVVM.Data.Body.LoginBody;
+import com.ujjwaltechnolabs.rolapartner.MVVM.Data.Body.VehicleRegisterBody;
 import com.ujjwaltechnolabs.rolapartner.MVVM.Data.Body.VerificationBody;
 import com.ujjwaltechnolabs.rolapartner.MVVM.Data.Model.LoginModel;
 import com.ujjwaltechnolabs.rolapartner.MVVM.Data.Model.VerificationModel;
 import com.ujjwaltechnolabs.rolapartner.MVVM.ViewModel.Login.DocumentModel;
 import com.ujjwaltechnolabs.rolapartner.Model.SelectFuelTypeResponse;
 import com.ujjwaltechnolabs.rolapartner.Model.SelectVehicleResponse;
+import com.ujjwaltechnolabs.rolapartner.Model.VehicleRegisterResponse;
 import com.ujjwaltechnolabs.rolapartner.R;
 import com.ujjwaltechnolabs.rolapartner.Retrofit.RetrofitServices;
 import com.ujjwaltechnolabs.rolapartner.Utils.CustomToast;
@@ -36,6 +38,7 @@ public class LoginViewModel extends ViewModel {
 
     MutableLiveData<SelectVehicleResponse> mSelectVehicleResultMutableData;
     MutableLiveData<List<SelectFuelTypeResponse>> mSelectFuelTypeResultMutableData;
+    MutableLiveData<VehicleRegisterResponse> mVehicleRegisterResultMutableData;
 
     public LoginViewModel(){
         mLoginResultMutableData = new MutableLiveData<>();
@@ -43,6 +46,7 @@ public class LoginViewModel extends ViewModel {
         mDocumentResultMutableData = new MutableLiveData<>();
         mSelectVehicleResultMutableData = new MutableLiveData<>();
         mSelectFuelTypeResultMutableData = new MutableLiveData<>();
+        mVehicleRegisterResultMutableData = new MutableLiveData<>();
 
     }
     public MutableLiveData<LoginModel> loginObserver() {
@@ -59,7 +63,9 @@ public class LoginViewModel extends ViewModel {
     public MutableLiveData<SelectVehicleResponse> selectVehicleObserver() {
         return mSelectVehicleResultMutableData;
     }
-
+    public MutableLiveData<VehicleRegisterResponse> vehicleRegisterObserver() {
+        return mVehicleRegisterResultMutableData;
+    }
     public MutableLiveData<List<SelectFuelTypeResponse>> selectFueltypeObserver() {
         return mSelectFuelTypeResultMutableData;
     }
@@ -192,6 +198,33 @@ public class LoginViewModel extends ViewModel {
                 Log.e("onFailure", t.getMessage());
                 CustomToast.showToastShort(context, context.getString(R.string.server_not_response));
                 mSelectFuelTypeResultMutableData.postValue(null);
+            }
+        });
+    }
+
+    public void vehicleRegister(Context context,VehicleRegisterBody body) {
+        Call<VehicleRegisterResponse> call = apiInterface.vehicleRegisterApi( body);
+        call.enqueue(new Callback<VehicleRegisterResponse>() {
+            @Override
+            public void onResponse(Call<VehicleRegisterResponse> call, Response<VehicleRegisterResponse> response) {
+                // Handle the API response here
+                if (response.isSuccessful()) {
+                    mVehicleRegisterResultMutableData.postValue(response.body());
+                    Log.e("onResponse", response.message());
+                } else {
+                    CustomToast.showToastShort(context, context.getString(R.string.try_again));
+
+                    mVehicleRegisterResultMutableData.postValue(null);
+                    Log.e("onResponseElse", response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<VehicleRegisterResponse> call, Throwable t) {
+                // Handle the API error here
+                Log.e("onFailure", t.getMessage());
+                CustomToast.showToastShort(context, context.getString(R.string.server_not_response));
+                mVehicleRegisterResultMutableData.postValue(null);
             }
         });
     }
